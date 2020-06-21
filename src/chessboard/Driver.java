@@ -57,6 +57,8 @@ public class Driver {
         
         int x2 = letterNumber(aSplit[1].charAt(0));
         int y2 = Character.getNumericValue(aSplit[1].charAt(1));
+        
+        
         board.movePiece(x1, y1, x2, y2);
     }
 

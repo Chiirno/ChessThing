@@ -3,16 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessBoard/src/chessboard/Board.java</file>
-            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessBoard/src/chessboard/King.java</file>
-            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessBoard/src/chessboard/Bishop.java</file>
-            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessBoard/src/chessboard/Rook.java</file>
-            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessBoard/src/chessboard/Queen.java</file>
-            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessBoard/src/chessboard/Driver.java</file>
-            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessBoard/src/chessboard/ChessBoard.java</file>
-            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessBoard/src/chessboard/Piece.java</file>
-            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessBoard/src/chessboard/Knight.java</file>
-            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessBoard/src/chessboard/Pawn.java</file>
+            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessThing/src/chessboard/Board.java</file>
+            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessThing/src/chessboard/King.java</file>
+            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessThing/src/chessboard/Rook.java</file>
+            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessThing/src/chessboard/ChessBoard.java</file>
+            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessThing/src/chessboard/Piece.java</file>
+            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessThing/src/chessboard/Bishop.java</file>
+            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessThing/src/chessboard/Pawn.java</file>
+            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessThing/src/chessboard/Queen.java</file>
+            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessThing/src/chessboard/Driver.java</file>
+            <file>file:/C:/Users/Chiruno/Coding%20Stuff/Projects/ChessThing/src/chessboard/Knight.java</file>
         </group>
     </open-files>
 </project-private>

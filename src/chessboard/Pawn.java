@@ -19,8 +19,7 @@ public class Pawn extends Piece {
 
     @Override
     Boolean isLegalMove(int row, int col) {
-        return pieceColour ? (row - pieceLocRow == 1 && col - pieceLocCol == 0) 
-                : (pieceLocRow - row == 1 && col - pieceLocCol == 0);
+        return false;
     }
 
     @Override

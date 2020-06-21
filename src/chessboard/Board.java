@@ -16,8 +16,6 @@ public class Board {
     final int X_POSITIONS = 8, Y_POSITIONS = 8;
     public int column, row;
 
-
-    
     public Board() {
         board = new Piece[8][8];
         board[0][0] = new Rook(true, 0, 0);
@@ -28,11 +26,11 @@ public class Board {
         board[0][5] = new Bishop(true, 0, 5);
         board[0][6] = new Knight(true, 0, 6);
         board[0][7] = new Rook(true, 0, 7);
-        
-        for(int i = 0; i < 8; i++) {
+
+        for (int i = 0; i < 8; i++) {
             board[1][i] = new Pawn(true, 1, i);
         }
-        
+
         board[7][0] = new Rook(false, 7, 0);
         board[7][1] = new Knight(false, 7, 1);
         board[7][2] = new Bishop(false, 7, 2);
@@ -41,48 +39,55 @@ public class Board {
         board[7][5] = new Bishop(false, 7, 5);
         board[7][6] = new Knight(false, 7, 6);
         board[7][7] = new Rook(false, 7, 7);
-        
-        for(int i = 0; i < 8; i++) {
+
+        for (int i = 0; i < 8; i++) {
             board[6][i] = new Pawn(false, 6, i);
         }
     }
-    
-    
-   
 
     public void display() {
         for (int row = 0; row < board.length; row++) {
             String tempRow = "row " + (8 - row) + ": ";
             for (int col = 0; col < board.length; col++) {
-                if(board[row][col] == null) {tempRow += '\u2001';}
-                else {tempRow += board[row][col].imageMethod();}
+                if (board[row][col] == null) {
+                    tempRow += '\u2001';
+                } else {
+                    tempRow += board[row][col].imageMethod();
+                }
             }
             System.out.println(tempRow);
         }
-        System.out.println("      " + '\u2005' + "a" + '\u2002' + 
-                "b" + '\u2002' + "c" + '\u2002' +  
-                "d" + '\u2002' + "e" + '\u2002' +  
-                "f" + '\u2002' +  "g" + '\u2002' +  "h");
-        
-        
+        System.out.println("      " + '\u2005' + "a" + '\u2002'
+                + "b" + '\u2002' + "c" + '\u2002'
+                + "d" + '\u2002' + "e" + '\u2002'
+                + "f" + '\u2002' + "g" + '\u2002' + "h");
+
         System.out.println(board[6][3].imageMethod());
     }
 
-    
     public int letterNumber(char col) {
-        switch(col) {
-            case 'a': return 1;
-            case 'b': return 2;
-            case 'c': return 3;
-            case 'd': return 4;
-            case 'e': return 5;
-            case 'f': return 6;
-            case 'g': return 7;
-            case 'h': return 8;
-            default: return 0;
+        switch (col) {
+            case 'a':
+                return 1;
+            case 'b':
+                return 2;
+            case 'c':
+                return 3;
+            case 'd':
+                return 4;
+            case 'e':
+                return 5;
+            case 'f':
+                return 6;
+            case 'g':
+                return 7;
+            case 'h':
+                return 8;
+            default:
+                return 0;
         }
     }
-    
+
     public int[] toArray(int[] chessCoords) {
         int[] arrayCoords = {8 - chessCoords[1], chessCoords[0] - 1};
         return arrayCoords;
@@ -90,14 +95,17 @@ public class Board {
 
     public void movePiece(int col, int row, int destCol, int destRow) {
 
-        int[] Start = toArray(new int[] {col, row});
-        int[] End = toArray(new int[] {destCol, destRow});
-        
+        int[] Start = toArray(new int[]{col, row});
+        int[] End = toArray(new int[]{destCol, destRow});
+        Piece movedPiece = board[Start[0]][Start[1]];
+
+        System.out.println(movedPiece);
+        System.out.println(movedPiece.isLegalMove(End[0], End[1]));
+
         board[End[0]][End[1]] = board[Start[0]][Start[1]];
         board[Start[0]][Start[1]] = null;
         System.out.println("");
         display();
     }
-
 
 }

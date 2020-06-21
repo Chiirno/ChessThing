@@ -18,13 +18,13 @@ public abstract class Piece {
     abstract Boolean isLegalMove(int row, int col);
 
     public Piece(boolean pieceColour, int pieceLocRow, int pieceLocCol) {
-        
+
         this.pieceColour = pieceColour;
         this.pieceLocRow = pieceLocRow;
         this.pieceLocCol = pieceLocCol;
 
     }
-    
+
     abstract char imageMethod();
 
 }
