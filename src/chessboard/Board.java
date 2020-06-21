@@ -11,48 +11,39 @@ package chessboard;
  */
 public class Board {
 
-    private final char[][] board;
-    private static Piece[][] newBrd;
+    private static Piece[][] board;
 
     final int X_POSITIONS = 8, Y_POSITIONS = 8;
     public int column, row;
 
-    public Board() {
-        board = new char[8][8];
-        for (int row = 0; row < 8; row++) {
-            for (int col = 0; col < 8; col++) {
-                board[row][col] = startingPiece(row, col);
-            }
-        }
-    }
 
     
-    public void newBoard() {
-        newBrd = new Piece[8][8];
-        newBrd[0][0] = new Rook(true, 0, 0);
-        newBrd[0][1] = new Knight(true, 0, 1);
-        newBrd[0][2] = new Bishop(true, 0, 2);
-        newBrd[0][3] = new Queen(true, 0, 3);
-        newBrd[0][4] = new King(true, 0, 4);
-        newBrd[0][5] = new Bishop(true, 0, 5);
-        newBrd[0][6] = new Knight(true, 0, 6);
-        newBrd[0][7] = new Rook(true, 0, 7);
+    public Board() {
+        board = new Piece[8][8];
+        board[0][0] = new Rook(true, 0, 0);
+        board[0][1] = new Knight(true, 0, 1);
+        board[0][2] = new Bishop(true, 0, 2);
+        board[0][3] = new Queen(true, 0, 3);
+        board[0][4] = new King(true, 0, 4);
+        board[0][5] = new Bishop(true, 0, 5);
+        board[0][6] = new Knight(true, 0, 6);
+        board[0][7] = new Rook(true, 0, 7);
         
         for(int i = 0; i < 8; i++) {
-            newBrd[1][i] = new Pawn(true, 1, i);
+            board[1][i] = new Pawn(true, 1, i);
         }
         
-        newBrd[7][0] = new Rook(false, 7, 0);
-        newBrd[7][1] = new Knight(false, 7, 1);
-        newBrd[7][2] = new Bishop(false, 7, 2);
-        newBrd[7][3] = new Queen(false, 7, 3);
-        newBrd[7][4] = new King(false, 7, 4);
-        newBrd[7][5] = new Bishop(false, 7, 5);
-        newBrd[7][6] = new Knight(false, 7, 6);
-        newBrd[7][7] = new Rook(false, 7, 7);
+        board[7][0] = new Rook(false, 7, 0);
+        board[7][1] = new Knight(false, 7, 1);
+        board[7][2] = new Bishop(false, 7, 2);
+        board[7][3] = new Queen(false, 7, 3);
+        board[7][4] = new King(false, 7, 4);
+        board[7][5] = new Bishop(false, 7, 5);
+        board[7][6] = new Knight(false, 7, 6);
+        board[7][7] = new Rook(false, 7, 7);
         
         for(int i = 0; i < 8; i++) {
-            newBrd[6][i] = new Pawn(false, 6, i);
+            board[6][i] = new Pawn(false, 6, i);
         }
     }
     
@@ -63,7 +54,8 @@ public class Board {
         for (int row = 0; row < board.length; row++) {
             String tempRow = "row " + (8 - row) + ": ";
             for (int col = 0; col < board.length; col++) {
-                tempRow += board[row][col];
+                if(board[row][col] == null) {tempRow += '\u2001';}
+                else {tempRow += board[row][col].imageMethod();}
             }
             System.out.println(tempRow);
         }
@@ -72,8 +64,8 @@ public class Board {
                 "d" + '\u2002' + "e" + '\u2002' +  
                 "f" + '\u2002' +  "g" + '\u2002' +  "h");
         
-        newBoard();
-        System.out.println(newBrd[6][3].imageMethod());
+        
+        System.out.println(board[6][3].imageMethod());
     }
 
     
@@ -98,11 +90,11 @@ public class Board {
 
     public void movePiece(int col, int row, int destCol, int destRow) {
 
-        int[] arrayCoords = toArray(new int[] {col, row});
-        int[] destArrayCoords = toArray(new int[] {destCol, destRow});
+        int[] Start = toArray(new int[] {col, row});
+        int[] End = toArray(new int[] {destCol, destRow});
         
-        board[destArrayCoords[0]][destArrayCoords[1]] = board[arrayCoords[0]][arrayCoords[1]];
-        board[arrayCoords[0]][arrayCoords[1]] = '\u2001';
+        board[End[0]][End[1]] = board[Start[0]][Start[1]];
+        board[Start[0]][Start[1]] = new Pawn(true, Start[0], Start[1]);
         System.out.println("");
         display();
     }
