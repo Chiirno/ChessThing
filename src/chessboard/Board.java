@@ -94,60 +94,9 @@ public class Board {
         int[] End = toArray(new int[] {destCol, destRow});
         
         board[End[0]][End[1]] = board[Start[0]][Start[1]];
-        board[Start[0]][Start[1]] = new Pawn(true, Start[0], Start[1]);
+        board[Start[0]][Start[1]] = null;
         System.out.println("");
         display();
-    }
-
-    public char startingPiece(int row, int col) {
-        switch (row) {
-            case 1:
-                return '\u2659';
-            case 6:
-                return '\u265F';
-
-            case 0:
-                switch (col) {
-                    case 0:
-                        return '\u2656';
-                    case 1:
-                        return '\u2658';
-                    case 2:
-                        return '\u2657';
-                    case 3:
-                        return '\u2655';
-                    case 4:
-                        return '\u2654';
-                    case 5:
-                        return '\u2657';
-                    case 6:
-                        return '\u2658';
-                    case 7:
-                        return '\u2656';
-                }
-            case 7:
-                switch (col) {
-                    case 0:
-                        return '\u265C';
-                    case 1:
-                        return '\u265E';
-                    case 2:
-                        return '\u265D';
-                    case 3:
-                        return '\u265B';
-                    case 4:
-                        return '\u265A';
-                    case 5:
-                        return '\u265D';
-                    case 6:
-                        return '\u265E';
-                    case 7:
-                        return '\u265C';
-                }
-            default:
-                return '\u2001';
-
-        }
     }
 
 }
