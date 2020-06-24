@@ -67,28 +67,7 @@ public class Board {
         System.out.println("___________________________");
     }
 
-    public int letterNumber(char col) {
-        switch (col) {
-            case 'a':
-                return 1;
-            case 'b':
-                return 2;
-            case 'c':
-                return 3;
-            case 'd':
-                return 4;
-            case 'e':
-                return 5;
-            case 'f':
-                return 6;
-            case 'g':
-                return 7;
-            case 'h':
-                return 8;
-            default:
-                return 0;
-        }
-    }
+    public int letterNumber(char col) {return col - 96;}
 
     public int[] toArray(int[] chessCoords) {
         int[] arrayCoords = {8 - chessCoords[1], chessCoords[0] - 1};
@@ -103,6 +82,8 @@ public class Board {
         board[End[0]][End[1]] = board[Start[0]][Start[1]];
         board[Start[0]][Start[1]] = null;
         System.out.println("");
+        int numb = 'b';
+        System.out.println(numb);
     }
 
 }
