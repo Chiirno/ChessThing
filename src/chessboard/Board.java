@@ -5,6 +5,8 @@
  */
 package chessboard;
 
+import static chessboard.ChessBoard.board;
+
 /**
  *
  * @author Chiruno
@@ -62,7 +64,7 @@ public class Board {
                 + "d" + '\u2002' + "e" + '\u2002'
                 + "f" + '\u2002' + "g" + '\u2002' + "h");
 
-        System.out.println(board[6][3].imageMethod());
+        System.out.println("___________________________");
     }
 
     public int letterNumber(char col) {
@@ -94,18 +96,13 @@ public class Board {
     }
 
     public void movePiece(int col, int row, int destCol, int destRow) {
-
+        
         int[] Start = toArray(new int[]{col, row});
         int[] End = toArray(new int[]{destCol, destRow});
-        Piece movedPiece = board[Start[0]][Start[1]];
-
-        System.out.println(movedPiece);
-        System.out.println(movedPiece.isLegalMove(End[0], End[1]));
-
+        
         board[End[0]][End[1]] = board[Start[0]][Start[1]];
         board[Start[0]][Start[1]] = null;
         System.out.println("");
-        display();
     }
 
 }

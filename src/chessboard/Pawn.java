@@ -16,10 +16,12 @@ public class Pawn extends Piece {
         super(pieceColour, pieceLocRow, pieceLocCol);
         
     }
+    
+    int[] chessCoords = {pieceLocCol + 1, 8 - pieceLocRow};
 
     @Override
-    Boolean isLegalMove(int row, int col) {
-        return false;
+    Boolean isLegalMove(int col, int row) {
+        return true;
     }
 
     @Override
@@ -27,13 +29,19 @@ public class Pawn extends Piece {
         if (pieceColour) {return '\u2659';} else {return '\u265F';}
     }
     
+    // true means WHITE
     public boolean getChar() {
         return pieceColour;
     }
     
+    public int[] getChessCoords() {
+        return chessCoords;
+    }
+    
+    
     
     public String toString() {
-        return "Pawn: " + imageMethod();
+        return " " + getChessCoords()[0] + " and " + getChessCoords()[1];
     }
     
     
