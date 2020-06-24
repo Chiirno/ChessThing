@@ -15,28 +15,6 @@ import java.util.Scanner;
  */
 public class Driver {
 
-    public static int letterNumber(char col) {
-        switch (col) {
-            case 'a':
-                return 1;
-            case 'b':
-                return 2;
-            case 'c':
-                return 3;
-            case 'd':
-                return 4;
-            case 'e':
-                return 5;
-            case 'f':
-                return 6;
-            case 'g':
-                return 7;
-            case 'h':
-                return 8;
-            default:
-                return 0;
-        }
-    }
 
     public static void main(String[] args) {
 
@@ -47,12 +25,15 @@ public class Driver {
         String[] aSplit = a.split("\\s+");
 
 
-        int x1 = letterNumber(aSplit[0].charAt(0));
+        int x1 = board.letterNumber(aSplit[0].charAt(0));
         int y1 = Character.getNumericValue(aSplit[0].charAt(1));
 
-        int x2 = letterNumber(aSplit[1].charAt(0));
+        int x2 = board.letterNumber(aSplit[1].charAt(0));
         int y2 = Character.getNumericValue(aSplit[1].charAt(1));
 
+        
+        
+        
         board.movePiece(x1, y1, x2, y2);
         board.display();
     }

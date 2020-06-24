@@ -46,6 +46,10 @@ public class Board {
             board[6][i] = new Pawn(false, 6, i);
         }
     }
+    
+    public Piece getPiece(int col, int row) {
+        return board[col][row];
+    }
 
     public void display() {
         for (int row = 0; row < board.length; row++) {
@@ -67,7 +71,7 @@ public class Board {
         System.out.println("___________________________");
     }
 
-    public int letterNumber(char col) {return col - 96;}
+    public int letterNumber(char letter) {return letter - 96;}
 
     public int[] toArray(int[] chessCoords) {
         int[] arrayCoords = {8 - chessCoords[1], chessCoords[0] - 1};
@@ -79,11 +83,18 @@ public class Board {
         int[] Start = toArray(new int[]{col, row});
         int[] End = toArray(new int[]{destCol, destRow});
         
+        
+        Piece movedPiece = board[Start[0]][Start[1]];
+        
+        if(movedPiece.isLegalMove(col, row, destCol, destRow)) {System.out.println("Tru");}
+        
+        System.out.println(movedPiece);
+        movedPiece.setCol(End[0]);
+        movedPiece.setRow(End[1]);
+        
         board[End[0]][End[1]] = board[Start[0]][Start[1]];
         board[Start[0]][Start[1]] = null;
         System.out.println("");
-        int numb = 'b';
-        System.out.println(numb);
     }
 
 }

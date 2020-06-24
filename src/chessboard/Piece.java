@@ -15,7 +15,7 @@ public abstract class Piece {
     int pieceLocRow;
     int pieceLocCol;
 
-    abstract Boolean isLegalMove(int row, int col);
+    abstract boolean isLegalMove(int col, int row, int destCol, int destRow);
 
     public Piece(boolean pieceColour, int pieceLocRow, int pieceLocCol) {
 
@@ -26,5 +26,10 @@ public abstract class Piece {
     }
 
     abstract char imageMethod();
+
+    public abstract void setRow(int destRow);
+    public abstract void setCol(int destRow);
+    public abstract int getRow();
+    public abstract int getCol();
 
 }

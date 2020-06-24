@@ -17,9 +17,29 @@ public class Bishop extends Piece {
         
     }
     
+    // Setters & Getters
+    @Override
+    public void setRow(int newRow) {
+        this.pieceLocRow = newRow;
+    }
     
     @Override
-    Boolean isLegalMove(int row, int col) {
+    public void setCol(int newCol) {
+        this.pieceLocCol = newCol;
+    }
+    
+    @Override
+    public int getRow() {
+        return this.pieceLocRow;
+    }
+    
+    @Override
+    public int getCol() {
+        return this.pieceLocCol;
+    }
+    
+    @Override
+    boolean isLegalMove(int col, int row, int destCol, int destRow) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
